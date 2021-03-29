@@ -453,6 +453,9 @@ html
 </html>
 ```
 
+### Credits
+Thanks to @Alrighttt for suggesting a fix for default CC transactions (getaddresstxids/getaddressutxos)
+
 ## License
 (The MIT License)
 

@@ -453,8 +453,12 @@ html
 </html>
 ```
 
+### Port mapping issue
+`komodod: zmq/zmqpublishnotifier.cpp:101: virtual void CZMQAbstractPublishNotifier::Shutdown(): Assertion `psocket' failed.`
+If you run into similar error make sure that ports from bitcore-node.json file are not currently in use.
+
 ### Credits
-Thanks to @Alrighttt for suggesting a fix for default CC transactions (getaddresstxids/getaddressutxos)
+Thanks to @Alrighttt for suggesting a fix for default CC transactions/balances (getaddresstxids/getaddressutxos/getaddressbalance)
 
 ## License
 (The MIT License)

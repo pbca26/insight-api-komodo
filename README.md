@@ -453,6 +453,44 @@ html
 </html>
 ```
 
+### Tokens CC V2
+In order to enable Tokens V2 methods make sure to add tokens section to bitcore-node.json as in example below
+```
+{
+  "network": "mainnet",
+  "port": 3003,
+  "services": [
+    "bitcoind",
+    "insight-api-komodo",
+    "insight-ui-komodo",
+    "web"
+  ],
+  "tokens": {
+    "version": "v2"
+  },
+  "servicesConfig": {
+    "bitcoind": {
+      "connect": [
+        {
+          "rpchost": "127.0.0.1",
+          "rpcport": 25335,
+          "rpcuser": "komodo9284u",
+          "rpcpassword": "local321097383",
+          "zmqpubrawtx": "tcp://127.0.0.1:25435"
+        }
+      ]
+    },
+    "insight-api-komodo": {
+      "rateLimiterOptions": {
+        "whitelist": ["::ffff:127.0.0.1","127.0.0.1"],
+        "whitelistLimit": 500000, 
+        "whitelistInterval": 3600000 
+      }
+    }
+  }
+}
+```
+
 ### Port mapping issue
 `komodod: zmq/zmqpublishnotifier.cpp:101: virtual void CZMQAbstractPublishNotifier::Shutdown(): Assertion `psocket' failed.`
 If you run into similar error make sure that ports from bitcore-node.json file are not currently in use.

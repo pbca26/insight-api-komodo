@@ -22,4 +22,4 @@ for (var i = 0; i < keys.length; i++) {
   }
 }
 
-console.log(JSON.stringify(tx, null, 2));
+console.log(JSON.stringify(txs, null, 2));

@@ -276,6 +276,37 @@ describe('TokenDecoder', function() {
     done();
   });
 
+  it('should return decoded token create transaction v2 (tokel nft)', function(done) {
+    var decodedData = TokenDecoder.decodeOpreturn(fixtures.tokelFormatNft);
+    should(decodedData).eql({
+      "txid":"6610ffe5d05a8a58e732e4a8c7076fca8c266e690046f1f546e227c65fa9706a",
+      "type":"create",
+      "evalcode":"f5",
+      "funcid":"63",
+      "version":"02",
+      "tokenid":"6610ffe5d05a8a58e732e4a8c7076fca8c266e690046f1f546e227c65fa9706a",
+      "asset":{
+        "evalcode":"0a",
+        "funcid":"0b",
+        "version":"4e"
+      },
+      "create":{
+        "name":"NewT0912ken",
+        "description":"Just a random token. 12$%^&*()_+-={}][",
+        "nftData":{
+          "url":"https://tokel.io/roadmap",
+          "id":69,
+          "royalty":100,
+          "arbitrary":"This is a test hex string to incorporate arbitrary data."
+        },
+        "supply":1,
+        "owner":"434da240a00fa003800103af038001f5af038001f7a12da22b802054748d79e51c2210343aea514bbb3c3370a95f1ff5923ad1e49f9f7d9e0eed28810302040082020204cc270402f701012102743d2afdb88ede68fb5938e961b1f41c2b6267b3286516543eb4e4ab87ad0d0a75",
+        "ownerAddress":"RPoNgF2T4iRKT8Sjoc2ty4VZ8Q8cXfhqgB"
+      }
+    });
+    done();
+  });
+
   it('should return decoded token fill order transaction v1', function(done) {
     var decodedData = TokenDecoder.decodeOpreturn(fixtures.v1Fill);
     should(decodedData).eql({
